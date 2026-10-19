@@ -51,6 +51,8 @@ export default function App() {
           accessKey={ACCESS_KEY}
           devTestAppId={APP_ID}
           platform={process.env.EXPO_PUBLIC_VPE_PLATFORM === 'gov' ? 'gov' : 'pub'}
+          // isBeta = true 고정. SDK에는 isBeta prop이 없고 stage('prod' | 'beta')로 받는다.
+          stage="beta"
           options={{ playlist: [SOURCES[mode]], autostart: true }}
           events={{
             fullscreen: ({ isFullScreen }: { isFullScreen: boolean }) => setIsFullScreen(isFullScreen),
