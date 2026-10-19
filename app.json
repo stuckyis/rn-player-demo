@@ -13,9 +13,14 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vpe.rndemo",
+      "infoPlist": {
+        "UIBackgroundModes": ["audio", "fetch"]
+      }
     },
     "android": {
+      "package": "com.vpe.rndemo",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -23,8 +28,13 @@
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "plugins": [
+      "expo-localization",
+      ["react-native-capture-protection", { "captureType": "fullMediaCapture" }],
+      [
+        "@sgrsoft/react-native-video",
+        { "enableAndroidPictureInPicture": true, "enableNotificationControls": true }
+      ]
+    ]
   }
 }
